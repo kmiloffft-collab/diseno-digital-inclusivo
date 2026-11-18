@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diseño Digital Inclusivo: Guía práctica WCAG</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#172033;background:#f4f7fb;line-height:1.6}
+*{box-sizing:border-box}body{margin:0}a{color:#0645ad}button{font:inherit;cursor:pointer;border:0;border-radius:9px;padding:.7rem 1rem;background:#174ea6;color:white;font-weight:700}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:4px solid #ffbf47;outline-offset:3px}
+header{background:#12345a;color:white;padding:2rem 1rem}header>div,main{max-width:950px;margin:auto}
+header p{max-width:700px}.skip{position:absolute;left:-9999px;background:white;padding:1rem}.skip:focus{left:1rem;top:1rem;z-index:10}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}nav button{background:#e1eaf7;color:#12345a}
+main{padding:1rem}.panel{background:white;border-radius:14px;padding:1.25rem;margin:1rem 0;box-shadow:0 2px 12px #14233a12}
+h1{font-size:2rem;margin:.2rem 0}h2{color:#12345a}.muted{color:#4b5563}
+.demo{padding:1rem;border:1px solid #ccd5e1;border-radius:10px;margin:.8rem 0}
+.good{background:#e2f5e9;border:3px solid #16743b;color:#104b29;padding:1rem;border-radius:10px;font-weight:700}
+.bad{background:#fff0ef;border:3px solid #b42318;color:#8a1710;padding:1rem;border-radius:10px;font-weight:700}
+.feedback{margin-top:.7rem;min-height:3rem}.question{padding:1rem;border:1px solid #d4dce7;border-radius:10px;margin:1rem 0}
+label{display:block;margin:.45rem 0}input[type=radio]{margin-right:.5rem}
+footer{text-align:center;padding:2rem;color:#4b5563}
+.high-contrast{background:#000;color:#fff}.high-contrast .panel,.high-contrast .question,.high-contrast .demo{background:#000;color:#fff;border:2px solid #ff0}.high-contrast h2{color:#ff0}
+.large{font-size:1.2em}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+<header><div><p>RECURSO MULTIMEDIA EDUCATIVO</p><h1>Diseño Digital Inclusivo</h1><p>Guía práctica para crear contenidos digitales más accesibles, comprensibles e incluyentes, siguiendo principios de accesibilidad WCAG.</p></div></header>
+<main id="contenido">
+<nav aria-label="Navegación principal">
+<button type="button" data-target="inicio">Inicio</button><button type="button" data-target="contraste">Contraste y color</button><button type="button" data-target="alternativo">Texto alternativo</button><button type="button" data-target="teclado">Navegación con teclado</button><button type="button" data-target="evaluacion">Evaluación</button>
+<button type="button" id="fontBtn" aria-label="Aumentar tamaño del texto">A+ Texto</button><button type="button" id="contrastBtn">Alto contraste</button>
+</nav>
+<section id="inicio" class="panel"><h2>Bienvenido/a</h2><p>La accesibilidad digital permite que más personas puedan percibir, comprender y utilizar los contenidos en internet, incluidas personas con discapacidad.</p><p>Explora los módulos, realiza las actividades y finaliza con la evaluación.</p><div class="demo"><strong>Objetivos de aprendizaje</strong><ul><li>Reconocer la importancia del contraste y el uso del color.</li><li>Describir imágenes mediante textos alternativos útiles.</li><li>Comprender la navegación mediante teclado.</li><li>Aplicar buenas prácticas básicas de accesibilidad.</li></ul></div></section>
+<section id="contraste" class="panel"><h2>1. Contraste y uso del color</h2><p>Un contraste suficiente facilita la lectura. Como referencia WCAG, el texto normal debe alcanzar una relación de contraste de al menos 4.5:1 y el texto grande 3:1.</p><div class="demo" style="background:#fff;color:#222"><strong>Ejemplo legible:</strong> texto oscuro sobre fondo claro.</div><div class="demo" style="background:#777;color:#888"><strong>Ejemplo difícil:</strong> texto gris sobre fondo gris.</div><p>No uses únicamente el color para comunicar información. Acompáñalo con palabras, símbolos o patrones.</p><h3>Actividad rápida</h3><p>¿Cuál combinación facilita más la lectura?</p><button type="button" class="activity" data-answer="no">Gris claro sobre gris</button> <button type="button" class="activity" data-answer="yes">Negro sobre blanco</button><div id="contrastFeedback" class="feedback" aria-live="polite"></div></section>
+<section id="alternativo" class="panel"><h2>2. Texto alternativo para imágenes</h2><p>El texto alternativo comunica el propósito o la información importante de una imagen a quienes no pueden verla o utilizan lectores de pantalla.</p><div class="demo"><strong>Ejemplo:</strong><p>Imagen de una estudiante usando un computador portátil en una biblioteca.</p></div><p>Un buen texto alternativo es breve, específico y depende del contexto. Evita comenzar con “imagen de” si no aporta información. Las imágenes decorativas pueden llevar texto alternativo vacío.</p><h3>Actividad rápida</h3><p>Para una imagen informativa de un gráfico que muestra el aumento de las ventas, ¿qué opción es más útil?</p><button type="button" class="activity" data-answer="no">“gráfico”</button> <button type="button" class="activity" data-answer="yes">“Las ventas aumentaron de 20 a 45 unidades entre enero y marzo”</button><div id="altFeedback" class="feedback" aria-live="polite"></div></section>
+<section id="teclado" class="panel"><h2>3. Navegación con teclado</h2><p>Una página accesible debe poder recorrerse sin mouse. La tecla <strong>Tab</strong> mueve el foco entre controles y <strong>Enter</strong> o <strong>Espacio</strong> activa muchos de ellos.</p><ul><li>Usa un orden de navegación lógico.</li><li>Haz visible el indicador de foco.</li><li>Incluye enlaces para saltar al contenido principal.</li><li>No crees trampas de teclado.</li></ul><div class="demo"><p>Prueba a recorrer los botones de esta página usando la tecla Tab. Observa el borde amarillo que indica dónde está el foco.</p></div></section>
+<section id="evaluacion" class="panel"><h2>4. Evaluación final</h2><p>Selecciona una respuesta para cada pregunta y pulsa “Validar respuestas”.</p>
+<form id="quiz">
+<div class="question"><p><strong>1. ¿Cuál es el contraste mínimo recomendado para texto normal según WCAG?</strong></p><label><input type="radio" name="q1" value="a"> 2:1</label><label><input type="radio" name="q1" value="b"> 4.5:1</label><label><input type="radio" name="q1" value="c"> 1:1</label><div id="f1" class="feedback" aria-live="polite"></div></div>
+<div class="question"><p><strong>2. ¿Para qué sirve el texto alternativo?</strong></p><label><input type="radio" name="q2" value="a"> Para describir la información o función de una imagen</label><label><input type="radio" name="q2" value="b"> Para decorar la página</label><label><input type="radio" name="q2" value="c"> Para reemplazar todos los títulos</label><div id="f2" class="feedback" aria-live="polite"></div></div>
+<div class="question"><p><strong>3. ¿Qué tecla permite avanzar entre elementos interactivos?</strong></p><label><input type="radio" name="q3" value="a"> Esc</label><label><input type="radio" name="q3" value="b"> Tab</label><label><input type="radio" name="q3" value="c"> Bloq Mayús</label><div id="f3" class="feedback" aria-live="polite"></div></div>
+<div class="question"><p><strong>4. ¿Es correcto comunicar un error solamente con color rojo?</strong></p><label><input type="radio" name="q4" value="a"> Sí, siempre</label><label><input type="radio" name="q4" value="b"> No, debe incluirse otra señal como texto o símbolo</label><div id="f4" class="feedback" aria-live="polite"></div></div>
+<div class="question"><p><strong>5. ¿Qué indica un foco visible al navegar con teclado?</strong></p><label><input type="radio" name="q5" value="a"> Qué elemento está seleccionado o activo</label><label><input type="radio" name="q5" value="b"> Que la página está cargando</label><label><input type="radio" name="q5" value="c"> Que el sonido está activado</label><div id="f5" class="feedback" aria-live="polite"></div></div>
+<button type="submit">✓ Validar respuestas</button><button type="reset" style="background:#4b5563">Reiniciar</button><div id="result" class="feedback" aria-live="polite"></div>
+</form></section>
+<section class="panel"><h2>Reflexión</h2><p>La accesibilidad no es un complemento: debe considerarse desde la planificación y el diseño. Pequeñas decisiones, como usar buen contraste, textos alternativos y controles accesibles por teclado, pueden mejorar la experiencia de muchas personas.</p></section>
+</main><footer>Recurso educativo elaborado para el aprendizaje de accesibilidad e inclusión digital.</footer>
+<script>
+document.querySelectorAll('nav [data-target]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.target).scrollIntoView({behavior:'smooth'})));
+document.getElementById('fontBtn').addEventListener('click',()=>document.body.classList.toggle('large'));
+document.getElementById('contrastBtn').addEventListener('click',()=>document.body.classList.toggle('high-contrast'));
+document.querySelectorAll('.activity').forEach(b=>b.addEventListener('click',()=>{const box=b.parentElement.querySelector('.feedback');const ok=b.dataset.answer==='yes';box.className='feedback '+(ok?'good':'bad');box.textContent=ok?'¡Correcto! Muy bien.':'Inténtalo de nuevo. Revisa la explicación del módulo.';}));
+const answers={q1:'b',q2:'a',q3:'b',q4:'b',q5:'a'};
+const explanations={q1:'El mínimo recomendado para texto normal es 4.5:1.',q2:'El texto alternativo transmite el propósito o contenido relevante de la imagen.',q3:'La tecla Tab permite avanzar entre elementos interactivos.',q4:'La información debe comunicarse también con texto, símbolos u otra señal.',q5:'El foco visible muestra qué elemento recibirá la acción del teclado.'};
+document.getElementById('quiz').addEventListener('submit',e=>{e.preventDefault();let score=0,missing=0;Object.keys(answers).forEach((q,i)=>{const chosen=document.querySelector('input[name="'+q+'"]:checked');const box=document.getElementById('f'+(i+1));if(!chosen){missing++;box.className='feedback bad';box.textContent='Falta responder esta pregunta.';}else if(chosen.value===answers[q]){score++;box.className='feedback good';box.textContent='¡Respuesta correcta! '+explanations[q];}else{box.className='feedback bad';box.textContent='Respuesta incorrecta. '+explanations[q];}});const result=document.getElementById('result');result.className='feedback '+(score===5?'good':'bad');result.textContent='Resultado: '+score+' de 5 respuestas correctas.'+(missing?' Te faltan '+missing+' pregunta(s).':'');});
+document.getElementById('quiz').addEventListener('reset',()=>{setTimeout(()=>{document.querySelectorAll('#quiz .feedback').forEach(x=>{x.textContent='';x.className='feedback';});},0);});
+</script>
+</body></html>
